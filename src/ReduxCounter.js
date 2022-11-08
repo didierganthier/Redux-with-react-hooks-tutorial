@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 
-import { incrementCounter } from "./store/actions";
+import { decrementCounter, incrementCounter } from "./store/actions";
 
 export default () => {
   const count = useSelector(state => state.counter, shallowEqual);
@@ -12,6 +12,13 @@ export default () => {
       <button
         onClick={() => {
           dispatch(incrementCounter());
+        }}
+      >
+        Increment!
+      </button>
+      <button
+        onClick={() => {
+          dispatch(decrementCounter());
         }}
       >
         Increment!
